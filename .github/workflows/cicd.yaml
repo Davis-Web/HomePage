@@ -27,5 +27,6 @@ jobs:
           ARGS: "-rltgoDzvO"
           SOURCE: "dist/spa/"
           REMOTE_HOST: ${{ secrets.HOST }}
+          REMOTE_PORT: ${{ secrets.PORT }}
           REMOTE_USER: ${{ secrets.USER }}
           TARGET: ${{ secrets.TARGET }}
