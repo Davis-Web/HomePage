@@ -27,7 +27,7 @@
       class="q-gutter-y-xl text-center"
       style="margin: 100px 30vw"
     >
-      <div class="text-h1">Welcome to Davis</div>
+      <div class="text-h1">{{ t('welcome') }}</div>
       <div class="text-h6 text-grey">The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy
         dog.The quick
         brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the
@@ -70,6 +70,7 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 const carouselImageList = [
   {
@@ -130,8 +131,10 @@ const contentList = [
 export default defineComponent({
   name: 'PageIndex',
   setup () {
+    const { t } = useI18n()
     const slide = ref(1)
     return {
+      t,
       slide,
       carouselImageList,
       contentList

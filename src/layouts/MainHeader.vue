@@ -15,28 +15,42 @@
           size="lg"
           flat
           :to="{name: 'Index'}"
-          label="首页"
+          :label="t('layout.index')"
         ></q-btn>
         <q-btn
           size="lg"
           flat
-          label="副本"
+          :label="t('layout.instance')"
         >
           <q-menu>
-            <q-list style="min-width: 100px">
+            <q-list style="min-width: 200px">
               <q-item
                 clickable
                 v-close-popup
-                :to="{name: 'Instance'}"
+                :to="{name: 'EmailMe'}"
               >
-                <q-item-section>副本1</q-item-section>
+                <q-item-section>副本一</q-item-section>
               </q-item>
               <q-item
                 clickable
                 v-close-popup
-                :to="{name: 'Instance'}"
+                :to="{name: 'EmailMe'}"
               >
-                <q-item-section>副本2</q-item-section>
+                <q-item-section>副本二</q-item-section>
+              </q-item>
+              <q-item
+                clickable
+                v-close-popup
+                :to="{name: 'EmailMe'}"
+              >
+                <q-item-section>副本三</q-item-section>
+              </q-item>
+              <q-item
+                clickable
+                v-close-popup
+                :to="{name: 'EmailMe'}"
+              >
+                <q-item-section>副本四</q-item-section>
               </q-item>
             </q-list>
           </q-menu>
@@ -44,23 +58,37 @@
         <q-btn
           size="lg"
           flat
-          label="社区"
+          :label="t('layout.community')"
         >
           <q-menu>
-            <q-list style="min-width: 100px">
+            <q-list style="min-width: 200px">
               <q-item
                 clickable
                 v-close-popup
                 :to="{name: 'Community'}"
               >
-                <q-item-section>社区1</q-item-section>
+                <q-item-section>Twitter</q-item-section>
               </q-item>
               <q-item
                 clickable
                 v-close-popup
                 :to="{name: 'Community'}"
               >
-                <q-item-section>社区2</q-item-section>
+                <q-item-section>Discord</q-item-section>
+              </q-item>
+              <q-item
+                clickable
+                v-close-popup
+                :to="{name: 'Community'}"
+              >
+                <q-item-section>Telegram</q-item-section>
+              </q-item>
+              <q-item
+                clickable
+                v-close-popup
+                :to="{name: 'Community'}"
+              >
+                <q-item-section>QQ</q-item-section>
               </q-item>
             </q-list>
           </q-menu>
@@ -69,13 +97,13 @@
           size="lg"
           flat
           :to="{name: 'Message'}"
-          label="消息"
+          :label="t('layout.message')"
         ></q-btn>
         <q-btn
           size="lg"
           flat
           :to="{name: 'About'}"
-          label="加入我们"
+          :label="t('layout.joinus')"
         ></q-btn>
       </q-toolbar-title>
       <q-space/>
@@ -88,19 +116,21 @@
         size="lg"
         icon="language"
         flat
-        label="语言"
+        :label="t('layout.language')"
       >
         <q-menu>
           <q-list style="min-width: 100px">
             <q-item
               clickable
               v-close-popup
+              @click="change2Chinese"
             >
               <q-item-section>中文</q-item-section>
             </q-item>
             <q-item
               clickable
               v-close-popup
+              @click="change2English"
             >
               <q-item-section>English</q-item-section>
             </q-item>
@@ -114,12 +144,22 @@
 
 <script>
 import { defineComponent } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 export default defineComponent({
   name: 'MainHeader',
   setup (props, context) {
+    const { t, locale } = useI18n({ useScope: 'global' })
 
-    return {}
+    return {
+      t,
+      change2Chinese: () => {
+        locale.value = 'zh-CN'
+      },
+      change2English: () => {
+        locale.value = 'en-US'
+      }
+    }
   }
 })
 </script>

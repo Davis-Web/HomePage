@@ -1,7 +1,6 @@
-// This is just an example,
-// so you can safely delete all default props below
+import layout from 'src/i18n/en-US/layout'
 
 export default {
-  failed: 'Action failed',
-  success: 'Action was successful'
+  welcome: 'Welcome to Davis',
+  layout: layout
 }
