@@ -15,12 +15,12 @@
           size="lg"
           flat
           :to="{name: 'Index'}"
-          :label="t('layout.index')"
+          :label="$t('layout.index')"
         ></q-btn>
         <q-btn
           size="lg"
           flat
-          :label="t('layout.instance')"
+          :label="$t('layout.instance')"
         >
           <q-menu>
             <q-list style="min-width: 200px">
@@ -58,7 +58,7 @@
         <q-btn
           size="lg"
           flat
-          :label="t('layout.community')"
+          :label="$t('layout.community')"
         >
           <q-menu>
             <q-list style="min-width: 200px">
@@ -97,13 +97,13 @@
           size="lg"
           flat
           :to="{name: 'Message'}"
-          :label="t('layout.message')"
+          :label="$t('layout.message')"
         ></q-btn>
         <q-btn
           size="lg"
           flat
           :to="{name: 'About'}"
-          :label="t('layout.joinus')"
+          :label="$t('layout.joinus')"
         ></q-btn>
       </q-toolbar-title>
       <q-space/>
@@ -116,7 +116,7 @@
         size="lg"
         icon="language"
         flat
-        :label="t('layout.language')"
+        :label="$t('layout.language')"
       >
         <q-menu>
           <q-list style="min-width: 100px">
@@ -149,10 +149,9 @@ import { useI18n } from 'vue-i18n'
 export default defineComponent({
   name: 'MainHeader',
   setup (props, context) {
-    const { t, locale } = useI18n({ useScope: 'global' })
+    const { locale } = useI18n({ useScope: 'global' })
 
     return {
-      t,
       change2Chinese: () => {
         locale.value = 'zh-CN'
       },
