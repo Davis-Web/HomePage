@@ -1,7 +1,7 @@
 <template>
   <q-footer class="bg-transparent text-black q-pa-lg q-gutter-y-md">
     <div class="row items-center">
-      <div class="text-grey">{{ $t('layout.lastUpdate') }}September 21, 2021</div>
+      <div class="text-grey">{{ $t('layout.lastUpdate') }}{{ $d(new Date(buildTimestamp), 'long') }}</div>
       <q-space/>
       <div class="q-gutter-x-sm">
         <q-avatar
@@ -120,13 +120,16 @@ const linkList = [
   }
 ]
 
+const buildTimestamp = document.documentElement.dataset.buildTimstamp
+
 export default defineComponent({
   name: 'MainFooter',
   setup (props, context) {
     return {
       externalLinkList,
       linkList,
-      window
+      window,
+      buildTimestamp
     }
   }
 })

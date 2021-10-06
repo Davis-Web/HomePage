@@ -6,7 +6,7 @@ export default {
     'en-US': enUS,
     'zh-CN': zhCN
   },
-  dateTimeFormats: {
+  datetimeFormats: {
     'en-US': {
       short: {
         year: 'numeric', month: 'short', day: 'numeric'
