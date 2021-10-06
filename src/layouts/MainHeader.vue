@@ -106,7 +106,6 @@
           :label="$t('layout.joinus')"
         ></q-btn>
       </q-toolbar-title>
-      <q-space/>
       <q-btn
         size="lg"
         flat
