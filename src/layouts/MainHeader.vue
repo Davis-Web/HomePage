@@ -4,7 +4,7 @@
     bordered
   >
     <q-toolbar>
-      <q-toolbar-title class="q-gutter-x-lg">
+      <q-toolbar-title class="q-gutter-x-md">
         <q-avatar>
           <img
             src="https://dummyimage.com/512x512/ffffff/81A8F8&text=LOGO"
@@ -17,82 +17,88 @@
           :to="{name: 'Index'}"
           :label="$t('layout.index')"
         ></q-btn>
-        <q-btn
+        <q-btn-dropdown
           size="lg"
           flat
           :label="$t('layout.instance')"
+          dropdown-icon="expand_more"
         >
-          <q-menu>
-            <q-list style="min-width: 200px">
-              <q-item
-                clickable
-                v-close-popup
-                :to="{name: 'EmailMe'}"
-              >
-                <q-item-section>副本一</q-item-section>
-              </q-item>
-              <q-item
-                clickable
-                v-close-popup
-                :to="{name: 'EmailMe'}"
-              >
-                <q-item-section>副本二</q-item-section>
-              </q-item>
-              <q-item
-                clickable
-                v-close-popup
-                :to="{name: 'EmailMe'}"
-              >
-                <q-item-section>副本三</q-item-section>
-              </q-item>
-              <q-item
-                clickable
-                v-close-popup
-                :to="{name: 'EmailMe'}"
-              >
-                <q-item-section>副本四</q-item-section>
-              </q-item>
-            </q-list>
-          </q-menu>
-        </q-btn>
-        <q-btn
+          <q-list>
+            <q-item
+              clickable
+              v-close-popup
+              active-class=""
+              :to="{name: 'EmailMe'}"
+            >
+              <q-item-section>副本一</q-item-section>
+            </q-item>
+            <q-item
+              clickable
+              v-close-popup
+              active-class=""
+              :to="{name: 'EmailMe'}"
+            >
+              <q-item-section>副本二</q-item-section>
+            </q-item>
+            <q-item
+              clickable
+              v-close-popup
+              active-class=""
+              :to="{name: 'EmailMe'}"
+            >
+              <q-item-section>副本三</q-item-section>
+            </q-item>
+            <q-item
+              clickable
+              v-close-popup
+              active-class=""
+              :to="{name: 'EmailMe'}"
+            >
+              <q-item-section>副本四</q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
+        <q-btn-dropdown
           size="lg"
           flat
           :label="$t('layout.community')"
+          dropdown-icon="expand_more"
         >
-          <q-menu>
-            <q-list style="min-width: 200px">
-              <q-item
-                clickable
-                v-close-popup
-                :to="{name: 'Community'}"
-              >
-                <q-item-section>Twitter</q-item-section>
-              </q-item>
-              <q-item
-                clickable
-                v-close-popup
-                :to="{name: 'Community'}"
-              >
-                <q-item-section>Discord</q-item-section>
-              </q-item>
-              <q-item
-                clickable
-                v-close-popup
-                :to="{name: 'Community'}"
-              >
-                <q-item-section>Telegram</q-item-section>
-              </q-item>
-              <q-item
-                clickable
-                v-close-popup
-                :to="{name: 'Community'}"
-              >
-                <q-item-section>QQ</q-item-section>
-              </q-item>
-            </q-list>
-          </q-menu>
-        </q-btn>
+          <q-list>
+            <q-item
+              clickable
+              v-close-popup
+              :to="{name: 'Community'}"
+              active-class=""
+            >
+              <q-item-section>Twitter</q-item-section>
+            </q-item>
+            <q-item
+              clickable
+              v-close-popup
+              active-class=""
+              :to="{name: 'Community'}"
+            >
+              <q-item-section>Discord</q-item-section>
+            </q-item>
+            <q-item
+              clickable
+              v-close-popup
+              active-class=""
+              :to="{name: 'Community'}"
+            >
+              <q-item-section>Telegram</q-item-section>
+            </q-item>
+            <q-item
+              clickable
+              v-close-popup
+              active-class=""
+              :to="{name: 'Community'}"
+            >
+              <q-item-section>QQ</q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
         <q-btn
           size="lg"
           flat
@@ -118,10 +124,11 @@
         :label="$t('layout.language')"
       >
         <q-menu>
-          <q-list style="min-width: 100px">
+          <q-list style="min-width: 120px">
             <q-item
               clickable
               v-close-popup
+              active-class=""
               @click="change2Chinese"
             >
               <q-item-section>中文</q-item-section>
@@ -129,6 +136,7 @@
             <q-item
               clickable
               v-close-popup
+              active-class=""
               @click="change2English"
             >
               <q-item-section>English</q-item-section>
